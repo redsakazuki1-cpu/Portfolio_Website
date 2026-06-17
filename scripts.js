@@ -20,14 +20,20 @@ showGreeting();
 }
 
 let wallpaper = 'url("snake.jpg")';
+let savedwallpaper = localStorage.getItem("wallpaper");
 
+if (savedwallpaper) {
+    wallpaper = savedwallpaper;
+}
+document.body.style.backgroundImage = wallpaper;
 function switchWallpaper() {
-if (wallpaper == 'url("snake.jpg")'){
+if (wallpaper == 'url("snake.jpg")') {
 wallpaper = 'url("snake2.jpg")';
 }
 else {
 wallpaper = 'url("snake.jpg")';
 }
+localStorage.setItem("wallpaper", wallpaper);
 document.body.style.backgroundImage = wallpaper;
 }
 
